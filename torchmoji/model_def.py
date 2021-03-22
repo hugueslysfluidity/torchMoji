@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-""" Model definition functions and weight loading.
-"""
-
 from __future__ import print_function, division, unicode_literals
 
 from os.path import exists
@@ -19,6 +15,7 @@ from __future__ import print_function
 import os
 from subprocess import call
 from builtins import input
+
 
 def Download_weights():
 
