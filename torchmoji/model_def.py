@@ -11,7 +11,6 @@ from torchmoji.lstm import LSTMHardSigmoid
 from torchmoji.attlayer import Attention
 from torchmoji.global_variables import NB_TOKENS, NB_EMOJI_CLASSES
 
-from __future__ import print_function
 import os
 from subprocess import call
 from builtins import input
