@@ -19,14 +19,11 @@ from pathlib import Path
 
 def Download_weights():
 
-    curr_folder = os.path.basename(os.path.normpath(os.getcwd()))
-
-
-
+    # curr_folder = os.path.basename(os.path.normpath(os.getcwd()))
     weights_filename = 'pytorch_model.bin'
-    weights_folder = 'model'
+    weights_folder = PRETRAINED_FOLDER
     Path(weights_folder).mkdir(parents=True, exist_ok=True)
-    weights_path = '{}/{}'.format(weights_folder, weights_filename)
+    weights_path = PRETRAINED_PATH  # '{}/{}'.format(weights_folder, weights_filename)
 
     weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin?dl=0#'
 
