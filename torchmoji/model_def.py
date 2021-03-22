@@ -21,13 +21,14 @@ def Download_weights():
 
     curr_folder = os.path.basename(os.path.normpath(os.getcwd()))
 
+
+
     weights_filename = 'pytorch_model.bin'
-    weights_folder = PRETRAINED_FOLDER
-    weights_path = '{}/{}'.format(weights_folder, weights_filename)
+    weights_folder = 'model'
     Path(weights_folder).mkdir(parents=True, exist_ok=True)
-    # if curr_folder == 'scripts':
-    # weights_path = '../' + weights_path
-    weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin'
+    weights_path = '{}/{}'.format(weights_folder, weights_filename)
+
+    weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin?dl=0#'
 
     MB_FACTOR = float(1<<20)
 
