@@ -9,7 +9,7 @@ from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, Packed
 
 from torchmoji.lstm import LSTMHardSigmoid
 from torchmoji.attlayer import Attention
-from torchmoji.global_variables import NB_TOKENS, NB_EMOJI_CLASSES
+from torchmoji.global_variables import NB_TOKENS, NB_EMOJI_CLASSES, PRETRAINED_PATH
 
 import os
 from subprocess import call
@@ -22,10 +22,10 @@ def Download_weights():
 
     weights_filename = 'pytorch_model.bin'
     weights_folder = 'model'
-    weights_path = '{}/{}'.format(weights_folder, weights_filename)
+    # weights_path = '{}/{}'.format(weights_folder, weights_filename)
+    weights_path = PRETRAINED_PATH
     # if curr_folder == 'scripts':
     # weights_path = '../' + weights_path
-    weights_path = '{}/{}'.format(curr_folder, weights_path)
     weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin?dl=0#'
 
     MB_FACTOR = float(1<<20)
