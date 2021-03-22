@@ -9,7 +9,7 @@ from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence, Packed
 
 from torchmoji.lstm import LSTMHardSigmoid
 from torchmoji.attlayer import Attention
-from torchmoji.global_variables import NB_TOKENS, NB_EMOJI_CLASSES
+from torchmoji.global_variables import NB_TOKENS, NB_EMOJI_CLASSES, PRETRAINED_FOLDER
 
 import os
 from subprocess import call
