@@ -18,6 +18,7 @@ SPECIAL_TOKENS.extend(['{}BLANK_{}'.format(SPECIAL_PREFIX, i) for i in range(6, 
 
 ROOT_PATH = dirname(dirname(abspath(__file__)))
 VOCAB_PATH = '{}/model/vocabulary.json'.format(ROOT_PATH)
+PRETRAINED_FOLDER = '{}/model'.format(ROOT_PATH)
 PRETRAINED_PATH = '{}/model/pytorch_model.bin'.format(ROOT_PATH)
 
 WEIGHTS_DIR = tempfile.mkdtemp()
