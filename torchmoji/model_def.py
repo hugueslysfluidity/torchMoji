@@ -19,18 +19,16 @@ from pathlib import Path
 
 def Download_weights(weights_folder):
 
-    # curr_folder = os.path.basename(os.path.normpath(os.getcwd()))
     weights_filename = 'pytorch_model.bin'
-    # Path(weights_folder).mkdir(parents=True, exist_ok=True)
     weights_path = '{}/{}'.format(weights_folder, weights_filename)
 
-    weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin?dl=0#'
+    weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin'
 
     MB_FACTOR = float(1<<20)
 
     download = True
     if os.path.exists(weights_path):
-        # print('Weight file already exists at {}. Would you like to redownload it anyway? [y/n]'.format(weights_path))
+        print('Weight file already exists')
         download = False # prompt()
         already_exists = True
     else:
@@ -47,10 +45,6 @@ def Download_weights(weights_folder):
         # if already_exists or prompt():
         print('Downloading...')
 
-        #urllib.urlretrieve(weights_download_link, weights_path)
-        #with open(weights_path,'wb') as f:
-        #    f.write(requests.get(weights_download_link).content)
-
         # downloading using wget due to issues with urlretrieve and requests
         sys_call = 'wget {} -O {}'.format(weights_download_link, os.path.abspath(weights_path))
         print("Running system call: {}".format(sys_call))
@@ -62,7 +56,7 @@ def Download_weights(weights_folder):
         print('Downloaded weights to {}'.format(weights_path))
     else:
         print('Exiting.')
-    return
+    return weights_path
 
 
 def torchmoji_feature_encoding(weight_path, return_attention=False):
