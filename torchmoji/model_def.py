@@ -27,7 +27,7 @@ def Download_weights():
     Path(weights_folder).mkdir(parents=True, exist_ok=True)
     # if curr_folder == 'scripts':
     # weights_path = '../' + weights_path
-    weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin?dl=0#'
+    weights_download_link = 'https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin'
 
     MB_FACTOR = float(1<<20)
 
