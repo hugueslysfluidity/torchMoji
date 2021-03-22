@@ -15,6 +15,7 @@ import os
 from subprocess import call
 from builtins import input
 from pathlib import Path
+import urllib
 
 
 def Download_weights(weights_folder):
@@ -45,10 +46,24 @@ def Download_weights(weights_folder):
         # if already_exists or prompt():
         print('Downloading...')
 
-        # downloading using wget due to issues with urlretrieve and requests
-        sys_call = 'wget {} -O {}'.format(weights_download_link, os.path.abspath(weights_path))
-        print("Running system call: {}".format(sys_call))
-        call(sys_call, shell=True)
+
+
+
+        # # downloading using wget due to issues with urlretrieve and requests
+        # sys_call = 'wget {} -O {}'.format(weights_download_link, os.path.abspath(weights_path))
+        # print("Running system call: {}".format(sys_call))
+        # call(sys_call, shell=True)
+
+        # downloading with urllib
+        u = urllib.request.urlopen(weights_download_link)
+        data = u.read()
+        u.close()
+        print(weights_path)
+        with open(weights_path, "wb") as f :
+            f.write(data)
+
+
+
 
         if os.path.getsize(weights_path) / MB_FACTOR < 80:
             raise ValueError("Download finished, but the resulting file is too small! " +
