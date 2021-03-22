@@ -17,9 +17,9 @@ SPECIAL_TOKENS = ['CUSTOM_MASK',
 SPECIAL_TOKENS.extend(['{}BLANK_{}'.format(SPECIAL_PREFIX, i) for i in range(6, 10)])
 
 ROOT_PATH = dirname(dirname(abspath(__file__)))
-VOCAB_PATH = '{}/model/vocabulary.json'.format(ROOT_PATH)
-PRETRAINED_FOLDER = '{}/model'.format(ROOT_PATH)
-PRETRAINED_PATH = '{}/model/pytorch_model.bin'.format(ROOT_PATH)
+VOCAB_PATH = '{}/torchmoji/model/vocabulary.json'.format(ROOT_PATH)
+PRETRAINED_FOLDER = '{}/torchmoji/model/'.format(ROOT_PATH)
+PRETRAINED_PATH = '{}/torchmoji/model/pytorch_model.bin'.format(ROOT_PATH)
 
 WEIGHTS_DIR = tempfile.mkdtemp()
 
