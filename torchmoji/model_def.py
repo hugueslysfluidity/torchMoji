@@ -19,11 +19,10 @@ from pathlib import Path
 import urllib
 
 
-with open(VOCAB_PATH, 'r') as f:
-    vocabulary = json.load(f)
 
 def Load_vocabulary():
-
+    with open(VOCAB_PATH, 'r') as f:
+        vocabulary = json.load(f)
     return vocabulary
 
 def Download_weights(weights_folder):
