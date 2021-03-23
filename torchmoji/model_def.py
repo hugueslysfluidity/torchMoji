@@ -20,12 +20,12 @@ import urllib
 
 
 rpath = os.getcwd()
-vocab_path = rpath+"/model/vocabulary.json"
+vocab_path = "/model/vocabulary.json"
 with open(vocab_path, 'r') as f:
     vocabulary = json.load(f)
 
 def Load_vocabulary():
-    
+
     return vocabulary
 
 def Download_weights(weights_folder):
