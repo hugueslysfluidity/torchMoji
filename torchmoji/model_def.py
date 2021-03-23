@@ -19,9 +19,7 @@ from pathlib import Path
 import urllib
 
 
-rpath = os.getcwd()
-vocab_path = "/model/vocabulary.json"
-with open(vocab_path, 'r') as f:
+with open(VOCAB_PATH, 'r') as f:
     vocabulary = json.load(f)
 
 def Load_vocabulary():
