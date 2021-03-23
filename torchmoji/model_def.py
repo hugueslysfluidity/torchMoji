@@ -12,11 +12,19 @@ from torchmoji.attlayer import Attention
 from torchmoji.global_variables import NB_TOKENS, NB_EMOJI_CLASSES
 
 import os
+import json
 from subprocess import call
 from builtins import input
 from pathlib import Path
 import urllib
 
+def Load_vocabulary():
+    
+    torchmoji_vocab_path = "/model/vocabulary.json"
+    with open(torchmoji_vocab_path, 'r') as f:
+        vocabulary = json.load(f)
+
+    return vocabulary
 
 def Download_weights(weights_folder):
 
