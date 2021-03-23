@@ -20,7 +20,7 @@ import urllib
 
 
 def Load_vocabulary():
-    with open("vocabulary.json", 'r') as f:
+    with open("VOCAB_PATH", 'r') as f:
         vocabulary = json.load(f)
     return vocabulary
 
