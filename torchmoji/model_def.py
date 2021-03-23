@@ -20,8 +20,8 @@ import urllib
 
 
 def Load_vocabulary():
-    with open("VOCAB_PATH", 'r') as f:
-        vocabulary = json.load(f)
+    with urllib.request.urlopen("https://github.com/hugueslysfluidity/torchMoji/raw/master/torchmoji/model/vocabulary.json") as url:
+        vocabulary = json.loads(url.read().decode())
     return vocabulary
 
 def Download_weights(weights_folder):
