@@ -18,12 +18,14 @@ from builtins import input
 from pathlib import Path
 import urllib
 
+
+rpath = os.getcwd()
+vocab_path = rpath+"/model/vocabulary.json"
+with open(vocab_path, 'r') as f:
+    vocabulary = json.load(f)
+
 def Load_vocabulary():
     
-    torchmoji_vocab_path = "/model/vocabulary.json"
-    with open(torchmoji_vocab_path, 'r') as f:
-        vocabulary = json.load(f)
-
     return vocabulary
 
 def Download_weights(weights_folder):
